@@ -13,7 +13,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG .
+                  sh 'docker build -t ${ID_DOCKER}/$IMAGE_NAME:$IMAGE_TAG .'
                 }
              }
         }
@@ -55,7 +55,7 @@ pipeline {
      stage ('Login and Push Image on docker hub') {
           agent any
           environment {
-           DOCKERHUB_PASSWORD  = credentials('6de517dc-ec5f-457e-a5d0-1bcaac1abbf6')
+           DOCKERHUB_PASSWORD  = credentials('dockerhub')
           }  
           steps {
              script {
