@@ -55,7 +55,7 @@ pipeline {
      stage ('Login and Push Image on docker hub') {
           agent any
           environment {
-           DOCKERHUB_PASSWORD  = credentials('6de517dc-ec5f-457e-a5d0-1bcaac1abbf6')
+           DOCKERHUB_PASSWORD  = credentials('886a98b7-ea96-4ca6-923a-7487f14d7e0a')
           }  
           steps {
              script {
@@ -118,4 +118,5 @@ pipeline {
             slackSend (color: '#FF0000', message: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
           }   
     }
+     
 }
